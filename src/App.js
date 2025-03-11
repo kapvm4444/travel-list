@@ -1,29 +1,17 @@
 import "./index.css";
 import React from "react";
+import PackingList from "./components/PackingList";
+import Stats from "./components/Stats";
+import Logo from "./components/Logo";
+import Form from "./components/Form";
 
 export default function App() {
   return (
-    <div>
+    <div className="app">
       <Logo />
       <Form />
       <PackingList />
-      <Status />
+      <Stats />
     </div>
   );
-}
-
-function Logo() {
-  return <h1>🏖️ Far Away</h1>;
-}
-
-function Form() {
-  return <div className="add-form">FORM</div>;
-}
-
-function PackingList() {
-  return <div className="list">LIST</div>;
-}
-
-function Status() {
-  return <div className="stats">STATUS</div>;
 }
