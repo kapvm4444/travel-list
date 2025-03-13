@@ -29,26 +29,31 @@ export default function PackingList({
 
   return (
     <div className="list">
-      <ul>
-        {sortedItems.map((item) => (
-          <Item
-            item={item}
-            key={item.id}
-            onDeleteItem={onDeleteItem}
-            onToggleItem={onToggleItem}
-          />
-        ))}
-      </ul>
+      {items.length > 0 ? (
+        <>
+          <ul>
+            {sortedItems.map((item) => (
+              <Item
+                item={item}
+                key={item.id}
+                onDeleteItem={onDeleteItem}
+                onToggleItem={onToggleItem}
+              />
+            ))}
+          </ul>
+          <div className={"actions"}>
+            <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
+              <option value={"input"}>SORT BY INPUT ORDER</option>
+              <option value={"name"}>SORT BY INPUT ITEM NAME</option>
+              <option value={"check"}>SORT BY CHECKED ITEM</option>
+            </select>
 
-      <div className={"actions"}>
-        <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-          <option value={"input"}>SORT BY INPUT ORDER</option>
-          <option value={"name"}>SORT BY INPUT ITEM NAME</option>
-          <option value={"check"}>SORT BY CHECKED ITEM</option>
-        </select>
-
-        <button onClick={onClear}>Clear List</button>
-      </div>
+            <button onClick={onClear}>Clear List</button>
+          </div>
+        </>
+      ) : (
+        <h2>Add Items from above to get started</h2>
+      )}
     </div>
   );
 }

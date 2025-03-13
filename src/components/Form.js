@@ -33,7 +33,7 @@ export default function Form({ onAddItem }) {
 
       <input
         type="text"
-        placeholder="...Items"
+        placeholder="Item name..."
         value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
