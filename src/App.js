@@ -1,3 +1,4 @@
+/*
 import "./index.css";
 import React, { useState } from "react";
 import { initialItems } from "./data";
@@ -104,3 +105,4 @@ function Stats() {
     </footer>
   );
 }
+*/

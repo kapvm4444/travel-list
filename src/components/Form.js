@@ -2,7 +2,7 @@ import React, { useState } from "react";
 
 //=>
 // Input form for inserting data
-export default function Form() {
+export default function Form({ onAddItem }) {
   //states
   const [description, setDescription] = useState("");
   const [quantity, setQuantity] = useState(1);
@@ -11,7 +11,9 @@ export default function Form() {
   function handleSubmit(e) {
     e.preventDefault();
     const newItem = { description, quantity, id: Date.now(), packed: false };
-    console.log(newItem);
+    onAddItem(newItem);
+    setDescription("");
+    setQuantity(1);
   }
 
   return (
