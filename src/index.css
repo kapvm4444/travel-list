@@ -1,5 +1,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Monoton&family=Quicksand:wght@500;700&display=swap");
 
+:root{
+    --orange: #EB5E28;
+    --dark-brown: #252422;
+    --brown: #403D39;
+    --secondary: #CCC5B9 ;
+    --dark:#FFFCF2;
+}
+
+html::selection{
+    background-color: var(--orange);
+    color: var(--dark-brown);
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -14,7 +27,7 @@ html {
 body {
     font-size: 2rem;
     font-family: "Quicksand", sans-serif;
-    color: #5a3e2b;
+    color: var(--dark);
     font-weight: 500;
     background-color: #fdf5e6;
     line-height: 1.6;
@@ -32,7 +45,7 @@ body {
 /* Header */
 h1 {
     text-align: center;
-    background-color: #f4a226;
+    background-color: var(--orange);
     font-family: "Monoton", cursive;
     font-size: 6rem;
     text-transform: uppercase;
@@ -44,7 +57,8 @@ h1 {
 
 /* Form Section */
 .add-form {
-    background-color: #e5771f;
+    background-color: var(--brown);
+    color: var(--secondary);
     padding: 2rem;
     display: flex;
     flex-wrap: wrap;
@@ -59,8 +73,8 @@ h3 {
 button,
 select,
 input {
-    background-color: #ffebb3;
-    color: #5a3e2b;
+    background-color: var(--dark-brown);
+    color: var(--secondary);
     font-family: inherit;
     border: none;
     border-radius: 20px;
@@ -74,24 +88,24 @@ input {
 button:hover,
 select:hover,
 input:focus {
-    background-color: #ffe07d;
+    background-color: var(--orange);
 }
 
 /* Form Button */
 .add-form button {
     text-transform: uppercase;
-    background-color: #76c7ad;
+    background-color:var(--dark-brown);
     transition: all 0.3s ease-in-out;
 }
 
 .add-form button:hover {
-    background-color: #58a28d;
+    background-color: var(--orange);
 }
 
 /* List Section */
 .list {
-    background-color: #5a3e2b;
-    color: #ffebb3;
+    background-color: var(--dark-brown);
+    color: var(--dark);
     padding: 3rem 0;
     display: flex;
     flex-direction: column;
@@ -154,7 +168,7 @@ input[type="checkbox"] {
 
 /* Footer Stats */
 .stats {
-    background-color: #76c7ad;
+    background-color: var(--orange);
     text-align: center;
     font-weight: 700;
     padding: 2rem;
