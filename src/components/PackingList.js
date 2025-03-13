@@ -3,7 +3,12 @@ import Item from "./Item";
 
 //=>
 // Packing List
-export default function PackingList({ items, onDeleteItem, onToggleItem }) {
+export default function PackingList({
+  items,
+  onDeleteItem,
+  onToggleItem,
+  onClear,
+}) {
   const [sortBy, setSortBy] = useState("input");
 
   let sortedItems;
@@ -41,6 +46,8 @@ export default function PackingList({ items, onDeleteItem, onToggleItem }) {
           <option value={"name"}>SORT BY INPUT ITEM NAME</option>
           <option value={"check"}>SORT BY CHECKED ITEM</option>
         </select>
+
+        <button onClick={onClear}>Clear List</button>
       </div>
     </div>
   );
