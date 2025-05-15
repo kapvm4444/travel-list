@@ -2,13 +2,13 @@ import Logo from "./Logo";
 import Form from "./Form";
 import PackingList from "./PackingList";
 import Stats from "./Stats";
-import { useState } from "react";
+import { useLocalStorage } from "../hooks/useLocalStorage";
 
 //=>
 // APP
 export default function App() {
   //creating an array for the list as a state so we can change the array any time
-  const [items, setItems] = useState([]);
+  const [items, setItems] = useLocalStorage([], "list");
 
   //Add 1 item to the list
   function handleAddItem(item) {

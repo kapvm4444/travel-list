@@ -17,29 +17,32 @@ export default function Form({ onAddItem }) {
   }
 
   return (
-    <form className="add-form" onSubmit={handleSubmit}>
-      <h3>What do you need for your trip? 🤔</h3>
+    <>
+      <h3 className="add-form">What do you need for your trip? 🤔</h3>
+      <form className="add-form" onSubmit={handleSubmit}>
+        <input
+          type="text"
+          placeholder="Item name..."
+          value={description}
+          onChange={(e) => setDescription(e.target.value)}
+          required
+        />
 
-      <select
-        onChange={(e) => setQuantity(e.target.value * 1)}
-        value={quantity}
-      >
-        {Array.from({ length: 20 }, (_, i) => i + 1).map((val) => (
-          <option value={val} key={val}>
-            {val}
-          </option>
-        ))}
-      </select>
+        <p>Quantity:</p>
+        <select
+          style={{ display: "block" }}
+          onChange={(e) => setQuantity(e.target.value * 1)}
+          value={quantity}
+        >
+          {Array.from({ length: 20 }, (_, i) => i + 1).map((val) => (
+            <option value={val} key={val}>
+              {val}
+            </option>
+          ))}
+        </select>
 
-      <input
-        type="text"
-        placeholder="Item name..."
-        value={description}
-        onChange={(e) => setDescription(e.target.value)}
-        required
-      />
-
-      <button>Add</button>
-    </form>
+        <button>Add</button>
+      </form>
+    </>
   );
 }
